@@ -1,5 +1,7 @@
 import requests
+from colorama import Fore, Style, init
 
+init(autoreset=True)
 SECURITY_HEADERS = [
     "Strict-Transport-Security",
     "Content-Security-Policy",
@@ -19,9 +21,9 @@ def check_headers(url):
 
         for header in SECURITY_HEADERS:
             if header in response.headers:
-                print(f"[OK] {header}")
+                print(Fore.GREEN + f"[OK] {header}")
             else:
-                print(f"[MISSING] {header}")
+                print(Fore.RED + f"[MISSING] {header}")
                 missing += 1
 
         return missing

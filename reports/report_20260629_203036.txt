@@ -1,0 +1,5 @@
+SentinelScan v2.0 Report
+===================================
+Target : htpps://example.com
+Score  : 70/100
+Date   : 2026-06-29 20:30:36.209556

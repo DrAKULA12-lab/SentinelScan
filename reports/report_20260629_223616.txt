@@ -1,0 +1,4 @@
+SentinelScan Report
+===================
+Target: https://google.com
+Security Score: 75/100

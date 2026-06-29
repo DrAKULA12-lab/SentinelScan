@@ -1,0 +1,4 @@
+SentinelScan Report
+===================
+Target: https://example.com
+Security Score: 70/100

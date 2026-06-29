@@ -2,17 +2,28 @@ from banner import show_banner
 from headers import check_headers
 from tls import check_tls
 from score import calculate_score
-
+from report import save_report
+from html_report import save_html_report
 def main():
     show_banner()
 
-    url = input("Enter target URL: ").strip()
+    choice = input("Scan (1) Single URL or (2) File? ").strip()
 
-    missing = check_headers(url)
+    if choice == "2":
+        with open("targets.txt", "r") as f:
+            urls = [line.strip() for line in f if line.strip()]
+    else:
+        urls = [input("Enter target URL: ").strip()]
 
-    check_tls(url)
+    for url in urls:
+        print("\n" + "=" * 50)
+        print("Scanning:", url)
+        print("=" * 50)
 
-    calculate_score(missing)
-
+        missing = check_headers(url)
+        check_tls(url)
+        score = calculate_score(missing)
+        save_report(url, score)
+        save_html_report(url, score)
 if __name__ == "__main__":
     main()

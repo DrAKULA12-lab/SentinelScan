@@ -1,0 +1,4 @@
+SentinelScan Report
+===================
+Target: https://cloudflare.com
+Security Score: 100/100
