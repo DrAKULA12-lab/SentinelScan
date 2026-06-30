@@ -6,6 +6,7 @@ from report import save_report
 from html_report import save_html_report
 from dns_lookup import dns_lookup
 from port_scan import port_scan
+from whois_lookup import whois_lookup
 def main():
     show_banner()
 
@@ -22,6 +23,7 @@ def main():
         print("Scanning:", url)
         print("=" * 50)
 
+        whois_lookup(url)
         dns_lookup(url)
         port_scan(url)
         missing = check_headers(url)
