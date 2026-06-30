@@ -4,6 +4,7 @@ from tls import check_tls
 from score import calculate_score
 from report import save_report
 from html_report import save_html_report
+from dns_lookup import dns_lookup
 def main():
     show_banner()
 
@@ -20,6 +21,7 @@ def main():
         print("Scanning:", url)
         print("=" * 50)
 
+        dns_lookup(url)
         missing = check_headers(url)
         check_tls(url)
         score = calculate_score(missing)
