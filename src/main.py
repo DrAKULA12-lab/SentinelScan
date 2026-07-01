@@ -8,6 +8,7 @@ from dns_lookup import dns_lookup
 from port_scan import port_scan
 from whois_lookup import whois_lookup
 from tech_detect import detect_technology
+from robots import check_robots
 def main():
     show_banner()
 
@@ -27,6 +28,7 @@ def main():
         whois_lookup(url)
         detect_technology(url)
         dns_lookup(url)
+        check_robots(url)
         port_scan(url)
         missing = check_headers(url)
         check_tls(url)
